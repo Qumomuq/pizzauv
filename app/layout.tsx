@@ -3,14 +3,12 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/shared/Footer";
 import Header from "../components/shared/Header";
-import Navbar from "../components/shared/Navbar";
 
 const nunito = Nunito({
   subsets: ['cyrillic'],
   variable: '--font-nunito',
   weight: ['400', '500', '600', '700', '800', '900'],
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,12 +23,10 @@ export default function RootLayout({
   return (
     <html lang="ru" className={nunito.className}>
       <body>
-        {/*<div className="container">*/}
           <Header/>
-          <Navbar/>
+          {/*<Navbar/>*/}
           {children}
           <Footer/>
-        {/*</div>*/}
       </body>
     </html>
   );

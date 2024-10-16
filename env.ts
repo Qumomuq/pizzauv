@@ -6,7 +6,7 @@
             [
                 {
                     "id": 0,
-                    "name": "peperoni",
+                    "name": "1",
                     "description": "dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg dfgsdfsdgsdgdsgsdg dfgsdf sdgdsgsdg",
                     "price": 3000,
                     "image": "",
@@ -17,7 +17,7 @@
                 },
                  {
                      "id": 1,
-                     "name": "nopeperoni",
+                     "name": "2",
                      "description": "dfgsdfsdgsdgdsgsdg dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg ",
                      "price": 34000,
                      "image": "",
@@ -28,7 +28,7 @@
                  },
                 {
                     "id": 2,
-                    "name": "peperoni",
+                    "name": "3",
                     "description": "dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg dfgsdfsdgsdgdsgsdg dfgsdf sdgdsgsdg",
                     "price": 3000,
                     "image": "",
@@ -39,7 +39,7 @@
                 },
                 {
                     "id": 3,
-                    "name": "nopeperoni",
+                    "name": "4",
                     "description": "dfgsdfsdgsdgdsgsdg dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg ",
                     "price": 34000,
                     "image": "",
@@ -50,7 +50,7 @@
                 },
                 {
                     "id": 4,
-                    "name": "peperoni",
+                    "name": "5",
                     "description": "dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg dfgsdfsdgsdgdsgsdg dfgsdf sdgdsgsdg",
                     "price": 3000,
                     "image": "",

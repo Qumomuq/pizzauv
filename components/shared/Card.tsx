@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./card.module.css";
-import ButtonAddCard from "../ui/ButtonAddCard";
+import ButtonCard from "../ui/ButtonCard";
 import { RussianRuble } from 'lucide-react';
 
-const Card = ({dataGroup, dataCard}) => {
+const Card = ({ dataCard }) => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.image}></div>
@@ -16,7 +16,7 @@ const Card = ({dataGroup, dataCard}) => {
                     <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
                     <p>{dataCard.price}</p>
                 </div>
-                <ButtonAddCard dataGroup={dataGroup} dataCard={dataCard} >Собрать</ButtonAddCard>
+                <ButtonCard dataCard={dataCard} >Собрать</ButtonCard>
             </div>
         </div>
     );

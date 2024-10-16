@@ -9,7 +9,7 @@ const CardContainer = () => {
             {product.map((cardItems: any) => (
                 <div key={cardItems.id + cardItems.name} id={cardItems.name} className={styles.container}>
                     <p  className={styles.title}>{cardItems.name}</p>
-                    <CardItems card={cardItems.items} groupId={cardItems.id}/>
+                    <CardItems card={cardItems.items}/>
                 </div>
             ))}
         </div>

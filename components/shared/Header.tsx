@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./header.module.css";
-import ButtonAddCard from "../ui/ButtonAddCard";
+import ButtonCard from "../ui/ButtonCard";
 import ButtonAuth from "../ui/ButtonAuth";
 
 

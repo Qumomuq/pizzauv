@@ -3,11 +3,11 @@ import Card from "./Card";
 import styles from "./cardItems.module.css";
 
 
-const CardItems = ({card, groupId}) => {
+const CardItems = ({card}) => {
     return (
         <div className={styles.container}>
             { card.map((dataCard: any) => (
-                <Card key={dataCard.id} dataGroup={groupId} dataCard={dataCard}/>
+                <Card key={dataCard.id} dataCard={dataCard}/>
             ))}
         </div>
     );
