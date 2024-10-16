@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/shared/Footer";
+import Header from "../components/shared/Header";
+import Navbar from "../components/shared/Navbar";
 
 const nunito = Nunito({
   subsets: ['cyrillic'],
@@ -20,9 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito.className}>
+    <html lang="ru" className={nunito.className}>
       <body>
-        {children}
+        {/*<div className="container">*/}
+          <Header/>
+          <Navbar/>
+          {children}
+          <Footer/>
+        {/*</div>*/}
       </body>
     </html>
   );

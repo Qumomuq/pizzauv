@@ -1,0 +1,90 @@
+.button {
+    height: 40px;
+    padding: 8px 20px;
+    /*width: 150px;*/
+    border-radius: 20px;
+    font-size: 18px;
+    background: var(--orangeWhite);
+    color: var(--orange);
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.button:hover {
+    background: var(--orangeLight);
+    box-shadow: 0 0 2px 2px var(--orangeLight);
+}
+
+.buttonAuth {
+    height: 40px;
+    padding: 8px 20px;
+    /*width: 150px;*/
+    border-radius: 20px;
+    font-size: 18px;
+    background: var(--grayLight);
+    color: var(--black);
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.buttonAuth:hover {
+    background: var(--grayMedium);
+    color: var(--gray);
+    box-shadow: 0 0 2px 2px var(--grayMedium);
+}
+
+.buttonShop {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    height: 40px;
+    padding: 8px 20px;
+    /*width: 150px;*/
+    border-radius: 20px;
+    font-size: 18px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.buttonContainer {
+    position: relative;
+    width: 30px;
+}
+
+.separator {
+    height: 40px;
+}
+
+.shopIcon {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s;
+    width: 30px;
+}
+.shopItem {
+    position: absolute;
+    right: 0;
+    /*right: 30px;*/
+    opacity: 1;
+    transition: 0.3s;
+    width: 30px;
+}
+
+.buttonShop:hover {
+    padding: 8px 20px;
+    content: "44";
+    background: var(--orangeDark);
+    box-shadow: 0 0 2px 2px var(--orangeDark);
+}
+
+.buttonShop:hover .shopIcon {
+    opacity: 1;
+}
+.buttonShop:hover .shopItem {
+    opacity: 0;
+}
