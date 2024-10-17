@@ -16,7 +16,7 @@ const Card = ({ dataCard }) => {
                     <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
                     <p>{dataCard.price}</p>
                 </div>
-                <ButtonCard dataCard={dataCard} >Собрать</ButtonCard>
+                <ButtonCard dataCard={dataCard}/>
             </div>
         </div>
     );

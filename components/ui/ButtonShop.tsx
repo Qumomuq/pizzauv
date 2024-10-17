@@ -3,7 +3,6 @@ import styles from "./button.module.css";
 import { MoveRight } from 'lucide-react';
 
 const ButtonShop = ({ onClick, sumItems }) => {
-    // sumItems = 0
     return (
         <button onClick={onClick} className={styles.buttonShop}>
             <span>Корзина</span>

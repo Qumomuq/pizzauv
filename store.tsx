@@ -7,7 +7,6 @@ const defaultState = {
 const action = {type: '', payload: ''}
 
 const reducer = (state = defaultState, action) => {
-    console.log(state)
     switch (action.type) {
         case "ADD_PRODUCT":
             return ADD_PRODUCT(state, action)
@@ -47,8 +46,8 @@ const ADD_PRODUCT = (state, action) => {
 }
 
 const DELETE_PRODUCT = (state, action) => {
-    if(action.payload.card.sumItems === 1) {
-        DELETE_ALL_PRODUCT(state, action)
+    if(action.payload.sumItems === 1) {
+        return DELETE_ALL_PRODUCT(state, action)
     } else {
         const newPosts = state.product.map((card) => (
             card.card.id === action.payload.card.id
@@ -60,5 +59,5 @@ const DELETE_PRODUCT = (state, action) => {
 }
 
 const DELETE_ALL_PRODUCT = (state, action) => {
-    return {...state, product: state.product.filter(card => (card.card.id !== action.payload))}
+    return {...state, product: state.product.filter(card => (card.card.id !== action.payload.card.id))}
 }

@@ -1,6 +1,22 @@
 .container {
-    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: center;*/
+    height: 150px;
     width: 100%;
     padding: 12px 16px;
-    background: var(--white);
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.description {
+
+}
+
+.order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

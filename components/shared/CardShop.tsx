@@ -1,20 +1,25 @@
 import React from 'react';
 import styles from "./cardShop.module.css";
 import {useDispatch} from "react-redux";
+import ButtonCard from "../ui/ButtonCard";
 
 const CardShop = ({data}) => {
     const dispatch = useDispatch()
-    // console.log(data)
 
-    const deleteCard = () => {
-        // console.log({groupId: data.groupId, cardId: data.card.id})
-        dispatch({type:'DELETE_ALL_PRODUCT', payload: data.card.id})
-    }
+    let sum = data.sumItems * data.card.price || 0
     return (
         <div className={styles.container}>
-            {data.card.name}
+            <div className={styles.description}>
+                {data.card.name}
+            </div>
+            <div className={styles.order}>
+                {sum}
+                <ButtonCard dataCard={data.card}/>
+            </div>
+
             {/*{data.card.id}*/}
-            <button onClick={() => deleteCard()}>fffff</button>
+            {/*<button onClick={() => deleteCard()}>fffff</button>*/}
+            {/*{data.sumItems}*/}
         </div>
     );
 };

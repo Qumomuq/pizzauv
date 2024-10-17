@@ -77,7 +77,6 @@
 
 .buttonShop:hover {
     padding: 8px 20px;
-    content: "44";
     background: var(--orangeDark);
     box-shadow: 0 0 2px 2px var(--orangeDark);
 }
@@ -117,4 +116,22 @@
 .combineButton > button:hover {
     background: var(--orangeLight);
     box-shadow: 0 0 2px 2px var(--orangeLight);
+}
+
+.buttonOrder {
+    height: 40px;
+    /*padding: 8px 20px;*/
+    width: 100%;
+    border-radius: 20px;
+    font-size: 18px;
+    background: var(--orange);
+    color: var(--white);
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+.buttonOrder:hover {
+    /*padding: 8px 20px;*/
+    background: var(--orangeDark);
+    box-shadow: 0 0 2px 2px var(--orangeDark);
 }
