@@ -1,12 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-
 const defaultState = {
     product: []
 }
 
-const action = {type: '', payload: ''}
-
-const reducer = (state = defaultState, action) => {
+export const reducerProduct = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD_PRODUCT":
             return ADD_PRODUCT(state, action)
@@ -18,10 +14,6 @@ const reducer = (state = defaultState, action) => {
             return state
     }
 }
-
-export const store = configureStore({
-    reducer
-})
 
 const ADD_PRODUCT = (state, action) => {
     if (state.product.length !== 0) {

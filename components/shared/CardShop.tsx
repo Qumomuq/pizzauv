@@ -5,7 +5,9 @@ import ButtonCard from "../ui/ButtonCard";
 
 const CardShop = ({data}) => {
     const dispatch = useDispatch()
-
+    const deleteCard = () => {
+        dispatch({type: 'DELETE_ALL_PRODUCT', payload: { card: data.card}})
+    }
     let sum = data.sumItems * data.card.price || 0
     return (
         <div className={styles.container}>
@@ -18,7 +20,7 @@ const CardShop = ({data}) => {
             </div>
 
             {/*{data.card.id}*/}
-            {/*<button onClick={() => deleteCard()}>fffff</button>*/}
+            <button onClick={() => deleteCard()}>fffff</button>
             {/*{data.sumItems}*/}
         </div>
     );

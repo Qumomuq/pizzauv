@@ -13,7 +13,7 @@ import {RussianRuble} from "lucide-react";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const data = useSelector(state => state)
+    const data = useSelector(state => state.reducerProduct)
     let sumProduct = 0
     data?.product.map((product) => (
         sumProduct += product.sumItems
@@ -22,6 +22,7 @@ const Navbar = () => {
     data?.product.map((product) => (
         sumOrder += product.card.price * product.sumItems
     ))
+    console.log(data)
 
     const showDrawer = () => {
         setOpen(true);

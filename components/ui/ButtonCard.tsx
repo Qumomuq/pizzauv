@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 const ButtonCard = ({children, dataCard}) => {
     const dispatch = useDispatch()
-    const data = useSelector(state => state)
+    const data = useSelector(state => state.reducerProduct)
     let sum = data?.product.filter(card => (card.card.id === dataCard.id))[0]?.sumItems || 0
     const addCard = () => {
         dispatch({type: 'ADD_PRODUCT', payload: {card:dataCard} })
