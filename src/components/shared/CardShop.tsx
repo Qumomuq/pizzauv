@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./cardShop.module.css";
+import styles from "@/styles/cardShop.module.css";
 import {useDispatch} from "react-redux";
 import ButtonCard from "../ui/ButtonCard";
 

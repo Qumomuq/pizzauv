@@ -1,5 +1,5 @@
 {
-  "name": "pizzauv",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.8",
-    "antd": "^5.21.3",
-    "lucide-react": "^0.452.0",
+    "@reduxjs/toolkit": "^2.3.0",
+    "antd": "^5.21.4",
+    "lucide-react": "^0.453.0",
     "next": "14.2.15",
+    "nodemailer": "^6.9.15",
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^9.1.2",
@@ -22,8 +23,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.15",
     "typescript": "^5"
   }
 }

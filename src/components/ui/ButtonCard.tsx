@@ -1,6 +1,5 @@
-'use client'
 import React from 'react';
-import styles from "./button.module.css";
+import styles from "../../styles/button.module.css";
 import {useDispatch, useSelector} from "react-redux";
 
 const ButtonCard = ({children, dataCard}) => {

@@ -1,8 +1,6 @@
 import React from 'react';
-import styles from "./header.module.css";
-import ButtonCard from "../ui/ButtonCard";
+import styles from "@/styles/header.module.css";
 import ButtonAuth from "../ui/ButtonAuth";
-
 
 const Header = () => {
     return (

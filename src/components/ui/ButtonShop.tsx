@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./button.module.css";
+import styles from "../../styles/button.module.css";
 import { MoveRight } from 'lucide-react';
 
 const ButtonShop = ({ onClick, sumItems }) => {
