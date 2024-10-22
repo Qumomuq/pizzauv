@@ -1,8 +1,7 @@
-'use client'
 import React, {useEffect, useState} from 'react';
-import product from "../../env";
+import product from "../../../env";
 import Link from "next/link";
-import styles from "./navbar.module.css";
+import styles from "@/styles/navbar.module.css";
 import {Drawer} from "antd";
 import ButtonShop from "../ui/ButtonShop";
 import CardShop from "./CardShop";
@@ -31,7 +30,7 @@ const Navbar = () => {
         setOpen(false);
     };
 
-    const drawerStyles: DrawerStyles = {
+    const drawerStyles = {
         mask: {
             backdropFilter: 'blur(10px)',
         },

@@ -1,6 +1,6 @@
 import React from 'react';
-import product from "../../env.ts";
-import styles from "./cardContainer.module.css";
+import product from "../../../env";
+import styles from "@/styles/cardContainer.module.css";
 import CardItems from "./CardItems";
 
 const CardContainer = () => {
