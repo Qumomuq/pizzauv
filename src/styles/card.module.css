@@ -18,11 +18,18 @@
     /*min-width: 430px;*/
 }
 
-.image {
+.containerImage {
     height: 260px;
     width: 100%;
     background: var(--orangeWhite);
+    box-shadow: inset 0 0 5px 5px white;
     border-radius: 15px;
+}
+.image {
+    object-fit: contain;
+    /*width: 100% !important;*/
+    position: relative !important;
+    /*height: unset !important;*/
 }
 .containerText {
     display: flex;
