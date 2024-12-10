@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import product from "../../../env";
 import Link from "next/link";
 import styles from "@/styles/navbar.module.css";
@@ -9,9 +9,13 @@ import {useSelector} from "react-redux";
 import type { DrawerStyles } from 'antd/es/drawer/DrawerPanel';
 import ButtonOrder from "../ui/ButtonOrder";
 import {RussianRuble} from "lucide-react";
+import IMask from "imask";
+import { IMaskInput } from 'react-imask';
+
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [phone, setPhone] = useState('');
     const data = useSelector(state => state.reducerProduct)
     let sumProduct = 0
     data?.product.map((product) => (
@@ -21,7 +25,10 @@ const Navbar = () => {
     data?.product.map((product) => (
         sumOrder += product.card.price * product.sumItems
     ))
-    console.log(data)
+
+    function handleInput(e) {
+        setPhone(e)
+    }
 
     const showDrawer = () => {
         setOpen(true);
@@ -47,7 +54,7 @@ const Navbar = () => {
             padding: 0
         },
         footer: {
-            height: '120px'
+            height: '160px'
         },
     };
 
@@ -83,6 +90,16 @@ const Navbar = () => {
                             <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
                             <span>{sumOrder}</span>
                         </div>
+                    </div>
+                    <div className={styles.textFooter}>
+                        <span>Номер телефона</span>
+                        <IMaskInput
+                            className={styles.input}
+                            mask={"+7 (000) 000-00-00"}
+                            value={phone}
+                            onAccept={(value, mask) => {handleInput(value)}}
+                            placeholder='+7(012)345-67-89'
+                        />
                     </div>
                     <ButtonOrder/>
                 </div>

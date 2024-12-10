@@ -6,10 +6,11 @@ const Header = () => {
     return (
         <div className={styles.container}>
             <div className={styles.left}>
-                <p>Южные ворота</p>
+                <p className={styles.name}>Южные ворота</p>
             </div>
             <div className={styles.right}>
-                <ButtonAuth>Войти</ButtonAuth>
+                «Тот, кто говорит, что счастье не в деньгах, явно никогда не тратил деньги на пиццу».
+                {/*<ButtonAuth>Войти</ButtonAuth>*/}
             </div>
         </div>
     );

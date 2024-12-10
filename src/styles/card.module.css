@@ -11,11 +11,59 @@
     /*padding: 25px;*/
     padding: 2% 1%;
     box-sizing: border-box;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 25%;
-    max-width: 25%;
-    /*min-width: 430px;*/
+    /*flex-grow: 0;*/
+    /*flex-shrink: 0;*/
+    /*flex-basis: 25%;*/
+    /*max-width: 25%;*/
+    min-width: 350px;
+}
+
+.containerModal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerImageModal {
+    position: relative;
+    height: 100%;
+    width: 70%;
+    /*background: var(--orangeWhite);*/
+    /*border-radius: 8px;*/
+    /*box-shadow: inset 0 0 10px 0px white;*/
+}
+
+.imageModal {
+    object-fit: contain;
+    /*width: 100% !important;*/
+    position: relative !important;
+}
+
+.containerModalDetails {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.footerModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    width: 30%;
+    gap: 50px;
+}
+
+.containerItem {
+    width: 350px;
 }
 
 .containerImage {
@@ -42,6 +90,7 @@
 }
 
 .title {
+    text-wrap: nowrap;
     height: 30px;
     font-size: 30px;
     font-weight: 700;
@@ -70,4 +119,113 @@
     width: 100%;
     height: 42px;
     padding: 0 10px;
+}
+@media screen and (max-width: 1314px) {
+    .mainContainer {
+        min-width: 300px;
+        width: 300px;
+    }
+    .containerItem {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 1126px) {
+    .mainContainer {
+        min-width: 270px;
+        width: 270px;
+    }
+    .containerItem {
+        width: 270px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .containerModal {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .containerModalDetails {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 830px) {
+    .mainContainer {
+        min-width: 230px;
+        width: 230px;
+        height: 415px;
+    }
+    .containerItem {
+        width: 230px;
+    }
+    .containerImage {
+        height: 230px;
+    }
+    .title {
+        height: 14px;
+        font-size: 22px;
+    }
+    .containerImageModal {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .mainContainer {
+        min-width: 160px;
+        width: 160px;
+        height: 347px;
+    }
+    .containerItem {
+        width: 160px;
+    }
+    .containerImage {
+        height: 160px;
+    }
+    .containerText {
+        height: 140px;
+    }
+    .container {
+        padding: 0;
+    }
+    .cost {
+        font-size: 15px;
+    }
+    .title {
+        text-wrap: wrap;
+        height: auto;
+        font-size: 20px;
+    }
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 334px) {
+    .mainContainer {
+        min-width: 140px;
+        width: 140px;
+        height: 347px;
+    }
+    .containerItem {
+        width: 140px;
+    }
+    .containerImage {
+        height: 140px;
+    }
+    .containerText {
+        height: 140px;
+    }
+    .container {
+        padding: 0;
+    }
+    .cost {
+        font-size: 15px;
+    }
+    .title {
+        text-wrap: wrap;
+        height: auto;
+        font-size: 20px;
+    }
+    .description {
+        font-size: 13px;
+    }
 }

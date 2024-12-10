@@ -128,10 +128,57 @@
     color: var(--white);
     font-weight: 500;
     transition: 0.4s;
+    margin: 10px 0 0 0;
 }
 
 .buttonOrder:hover {
     /*padding: 8px 20px;*/
     background: var(--orangeDark);
     box-shadow: 0 0 2px 2px var(--orangeDark);
+}
+
+@media screen and (min-width: 334px) and (max-width: 470px) {
+    .button {
+        height: 30px;
+        padding: 4px 10px;
+        font-size: 16px;
+    }
+    .combineButton {
+        font-size: 19px;
+    }
+    .combineButton > button {
+        height: 26px;
+        width: 26px;
+        font-weight: 700;
+    }
+    .buttonShop {
+        gap: 8px;
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 334px) {
+    .button {
+        height: 26px;
+        padding: 2px 6px;
+        font-size: 15px;
+    }
+    .combineButton {
+        font-size: 18px;
+        gap: 4px;
+    }
+    .combineButton > button {
+        height: 25px;
+        width: 25px;
+        font-weight: 700;
+    }
+    .buttonShop {
+        gap: 4px;
+        padding: 8px 8px;
+        font-size: 14px;
+        height: 34px;
+    }
+    .buttonContainer {
+        width: 17px;
+    }
 }

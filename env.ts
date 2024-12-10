@@ -178,8 +178,8 @@
             [
                 {
                     "id": 0,
-                    "name": "Кесадилья с курицей",
-                    "description": "dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg dfgsdfsdgsdgdsgsdg dfgsdf sdgdsgsdg",
+                    "name": "Кесадилья",
+                    "description": "Кесадилья с курицей",
                     "price": 3000,
                     "image": "",
                     "properties": {
@@ -189,8 +189,8 @@
                 },
                 {
                     "id": 1,
-                    "name": "Кесадилья со свининой",
-                    "description": "dfgsdfsdgsdgdsgsdg dfgsdfs dgsdgdsgsdg dfgsdf sdgdsgsdg ",
+                    "name": "Кесадилья",
+                    "description": "Кесадилья со свининой",
                     "price": 34000,
                     "image": "",
                     "properties": {
