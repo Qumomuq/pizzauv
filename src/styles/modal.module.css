@@ -15,6 +15,20 @@
     /*transform: scale(0);*/
 }
 
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    color: var(--gray);
+    z-index: 100;
+    transition: 0.3s;
+}
+.close:hover {
+    color: var(--redLight);
+}
+
 .modal.active {
     opacity: 1;
     /*transform: scale(1);*/
@@ -25,9 +39,9 @@
     padding: 20px;
     border-radius: 12px;
     background: white;
-    height: 800px;
+    height: 66vh;
     /*width: 200px;*/
-    width: 70vw;
+    width: 66vw;
     transform: scale(0.5);
     transition: 0.3s;
     overflow-y: auto;
@@ -39,8 +53,8 @@
 
 @media screen and (max-width: 1570px) {
     .modalContent  {
-        height: 70vh;
-        width: 70vw;
+        height: 66vh;
+        width: 66vw;
     }
 }
 @media screen and (max-width: 1260px) {

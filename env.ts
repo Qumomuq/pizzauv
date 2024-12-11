@@ -201,8 +201,8 @@
             ]
     },
 ]
- export const email = 'email';
- export const pass = 'pass';
+ export const email = '0.vladok.chirkov.0@gmail.com';
+ export const pass = '29asd08z2001';
 
 export default product
 

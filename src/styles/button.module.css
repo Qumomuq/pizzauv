@@ -137,13 +137,14 @@
     box-shadow: 0 0 2px 2px var(--orangeDark);
 }
 
-@media screen and (min-width: 334px) and (max-width: 470px) {
+@media screen and (min-width: 334px) and (max-width: 500px) {
     .button {
         height: 30px;
         padding: 4px 10px;
         font-size: 16px;
     }
     .combineButton {
+        height: 30px;
         font-size: 19px;
     }
     .combineButton > button {

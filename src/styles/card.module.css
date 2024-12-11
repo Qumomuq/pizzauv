@@ -168,7 +168,7 @@
     }
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 490px) {
     .mainContainer {
         min-width: 160px;
         width: 160px;
