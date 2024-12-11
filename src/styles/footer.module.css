@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: 8% 10% 10% 10%;
+    padding: 4% 10% 10% 10%;
     box-sizing: border-box;
     gap: 30px;
     background: var(--orangeWhite);

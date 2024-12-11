@@ -19,7 +19,7 @@ const CardShop = ({data}) => {
             <Modal active={modalActive} setActive={setModalActive}>
                 <div className={styles.containerModal}>
                     <div className={styles.containerImageModal}>
-                        <Image src={`/${data.card.name}.png`}
+                        <Image src={`/image/${data.card.name}.png`}
                                alt={data.card.name}
                                className={styles.imageModal}
                                fill={true}

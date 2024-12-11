@@ -1,4 +1,5 @@
-export const sendMail = async (data) =>
+export const sendMail = async (data) => {
+    console.log('sendMail')
     fetch("/api/main", {
         method: "POST",
         body: JSON.stringify(data),
@@ -7,3 +8,5 @@ export const sendMail = async (data) =>
         // if (!res.ok) throw new Error("Failed to send message");
         return res.json();
     });
+}
+

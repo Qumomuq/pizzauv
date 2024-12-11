@@ -6,7 +6,7 @@ import styles from "@/styles/cardItems.module.css";
 const CardItems = ({card}) => {
     return (
         <div className={styles.container}>
-            { card.map((dataCard: any) => (
+            { card.map((dataCard) => (
                 <Card key={dataCard.id} dataCard={dataCard}/>
             ))}
         </div>

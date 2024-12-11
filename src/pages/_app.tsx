@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <main className={nunito.className}>
                   <Header/>
                   <Navbar/>
-                  <Component {...pageProps} />;
+                  <Component {...pageProps} />
                   <Footer/>
               </main>
          </PersistGate>

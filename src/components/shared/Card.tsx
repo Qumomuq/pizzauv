@@ -13,7 +13,7 @@ const Card = ({ dataCard }) => {
             <Modal active={modalActive} setActive={setModalActive}>
                 <div className={styles.containerModal}>
                     <div className={styles.containerImageModal}>
-                        <Image src={`/${dataCard.name}.png`}
+                        <Image src={`/image/${dataCard.name}.png`}
                                alt={dataCard.name}
                                className={styles.imageModal}
                                fill={true}
@@ -61,7 +61,7 @@ const Card = ({ dataCard }) => {
 
             <button onClick={ () => setModalActive(true)} className={styles.containerItem}>
                 <div className={styles.containerImage}>
-                    <Image src={`/${dataCard.name}.png`}
+                    <Image src={`/image/${dataCard.name}.png`}
                            alt={dataCard.name}
                            className={styles.image}
                            fill={true}
