@@ -71,9 +71,9 @@ const CardShop = ({data}) => {
                     <div className={styles.nameItem}>
                         {data.card.name}
                     </div>
-                    <div>
-                        Соус «{data.card.name}»
-                    </div>
+                    {/*<div>*/}
+                    {/*    Соус «{data.card.name}»*/}
+                    {/*</div>*/}
                 </button>
 
                 <div className={styles.order}>

@@ -17,7 +17,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
     title: "Пиццерия Южные Ворота",
-    description: "Пиццерия Южные Ворота",
+    description: "Пиццерия Южные Ворота. Мы находимся по адресу Ул.Тихая 111, м-н Южные Ворота",
 };
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -18,7 +18,7 @@ export const sendOrderDetails = async (orderDetails) => {
                 "Content-Type": "text/plain;charset=utf-8",
             },
             body: JSON.stringify({
-                to_email: 'illusory.racer01@mail.ru', // Email владельца сайта
+                to_email: 'pizzauznyevorota@gmail.com', // Email владельца сайта
                 subject: 'Новый заказ на сайте', // Тема письма
                 message: `${message}`, // Тело письма
             }),
