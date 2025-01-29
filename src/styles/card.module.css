@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    height: 430px;
+    height: 470px;
     width: 285px;
     border-radius: 15px;
     gap: 13px;
@@ -48,7 +48,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -84,7 +84,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    height: 100px;
+    height: 140px;
     gap: 10px;
     padding: 0 10px;
 }
@@ -120,16 +120,20 @@
     height: 42px;
     padding: 0 10px;
 }
-@media screen and (max-width: 1314px) {
+@media screen and (max-width: 1330px) {
     .mainContainer {
         min-width: 300px;
         width: 300px;
+        height: 500px;
+    }
+    .containerText {
+        height: 180px;
     }
     .containerItem {
         width: 300px;
     }
 }
-@media screen and (max-width: 1126px) {
+@media screen and (max-width: 1142px) {
     .mainContainer {
         min-width: 270px;
         width: 270px;
@@ -147,11 +151,14 @@
         width: 100%;
     }
 }
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 844px) {
     .mainContainer {
         min-width: 230px;
         width: 230px;
-        height: 415px;
+        height: 470px;
+    }
+    .containerText {
+        height: 190px;
     }
     .containerItem {
         width: 230px;
@@ -172,7 +179,7 @@
     .mainContainer {
         min-width: 160px;
         width: 160px;
-        height: 347px;
+        height: 425px;
     }
     .containerItem {
         width: 160px;
@@ -181,7 +188,7 @@
         height: 160px;
     }
     .containerText {
-        height: 140px;
+        height: 230px;
     }
     .container {
         padding: 0;
@@ -203,15 +210,15 @@
     .mainContainer {
         min-width: 140px;
         width: 140px;
-        height: 347px;
+        height: 425px;
+    }
+    .containerText {
+        height: 237px;
     }
     .containerItem {
         width: 140px;
     }
     .containerImage {
-        height: 140px;
-    }
-    .containerText {
         height: 140px;
     }
     .container {

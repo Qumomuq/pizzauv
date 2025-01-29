@@ -101,7 +101,7 @@ const Navbar = () => {
                             placeholder='+7(012)345-67-89'
                         />
                     </div>
-                    <ButtonOrder/>
+                    <ButtonOrder data={data} phone={phone} sumOrder={sumOrder}/>
                 </div>
             </Drawer>
         </div>

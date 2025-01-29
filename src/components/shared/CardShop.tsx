@@ -13,7 +13,14 @@ const CardShop = ({data}) => {
     }
     let sum = data.sumItems * data.card.price || 0
     const [modalActive, setModalActive] = useState(false);
-
+    const renderDescription = (description) => {
+        return description.split('\/n').map((line, index) => (
+            <span key={index}>
+                {line}
+                <br/>
+            </span>
+        ));
+    };
     return (
         <div className={styles.mainContainer}>
             <Modal active={modalActive} setActive={setModalActive}>
@@ -26,23 +33,34 @@ const CardShop = ({data}) => {
                         />
                     </div>
                     <div className={styles.containerModalDetails}>
-                        <div className={styles.cost}>
-                            <p>{data.card.name}</p>
+                        <div>
+                            <div className={styles.cost}>
+                                <p>{data.card.name}</p>
+                            </div>
+                            <div>{renderDescription(data.card.descriptionFull)}</div>
                         </div>
-                        <div>{data.card.description}</div>
-                        <div className={styles.cost}>
-                            <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
-                            <p>{data.card.price}</p>
-                        </div>
+
                         <div className={styles.footerModal}>
+                            <div className={styles.cost}>
+                                <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
+                                <p>{data.card.price}</p>
+                            </div>
                             <ButtonCard dataCard={data.card}/>
                         </div>
+
+                        {/*<div className={styles.cost}>*/}
+                        {/*    <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />*/}
+                        {/*    <p>{data.card.price}</p>*/}
+                        {/*</div>*/}
+                        {/*<div className={styles.footerModal}>*/}
+                        {/*    <ButtonCard dataCard={data.card}/>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </Modal>
             {/*image*/}
             <button onClick={ () => setModalActive(true)} className={styles.image}>
-                <Image src={`/${data.card.name}.png`}
+                <Image src={`/image/${data.card.name}.png`}
                        alt={data.card.name}
                        className={styles.imageModal}
                        fill={true}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "@/styles/card.module.css";
 import ButtonCard from "../ui/ButtonCard";
 import { RussianRuble } from 'lucide-react';
@@ -7,7 +7,14 @@ import Modal from "../ui/Modal"
 
 const Card = ({ dataCard }) => {
     const [modalActive, setModalActive] = useState(false);
-
+    const renderDescription = (description) => {
+        return description.split('\/n').map((line, index) => (
+            <span key={index}>
+                {line}
+                <br/>
+            </span>
+        ));
+    };
     return (
         <div className={styles.mainContainer}>
             <Modal active={modalActive} setActive={setModalActive}>
@@ -20,11 +27,12 @@ const Card = ({ dataCard }) => {
                         />
                     </div>
                     <div className={styles.containerModalDetails}>
-                        <div className={styles.cost}>
-                            <p>{dataCard.name}</p>
+                        <div>
+                            <div className={styles.cost}>
+                                <p>{dataCard.name}</p>
+                            </div>
+                            <div>{renderDescription(dataCard.descriptionFull)}</div>
                         </div>
-                        <div>{dataCard.description}</div>
-
                         <div className={styles.footerModal}>
                             <div className={styles.cost}>
                                 <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
@@ -69,7 +77,7 @@ const Card = ({ dataCard }) => {
                 </div>
                 <div className={styles.containerText}>
                     <p className={styles.title}>{dataCard.name}</p>
-                    <p className={styles.description}>{dataCard.description}</p>
+                    <p className={styles.description}>{renderDescription(dataCard.description)}</p>
                 </div>
             </button>
             <div className={styles.container}>
