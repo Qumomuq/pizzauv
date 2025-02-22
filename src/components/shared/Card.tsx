@@ -24,14 +24,13 @@ const Card = ({ dataCard }) => {
                                alt={dataCard.name}
                                className={styles.imageModal}
                                fill={true}
+                               loading={'lazy'}
                         />
                     </div>
                     <div className={styles.containerModalDetails}>
-                        <div>
-                            <div className={styles.cost}>
-                                <p>{dataCard.name}</p>
-                            </div>
-                            <div>{renderDescription(dataCard.descriptionFull)}</div>
+                        <div className={styles.containerDescription}>
+                            <p className={styles.cost}>{dataCard.name}</p>
+                            <div className={styles.text}>{renderDescription(dataCard.descriptionFull)}</div>
                         </div>
                         <div className={styles.footerModal}>
                             <div className={styles.cost}>
@@ -43,40 +42,23 @@ const Card = ({ dataCard }) => {
                     </div>
                 </div>
             </Modal>
-            {/*<Modal*/}
-            {/*    centered*/}
-            {/*    open={open}*/}
-            {/*    onOk={() => setOpen(false)}*/}
-            {/*    onCancel={() => setOpen(false)}*/}
-            {/*    width={1000}*/}
-            {/*    styles={modalStyles}*/}
-            {/*    footer={null}*/}
-            {/*>*/}
-            {/*    <div className={styles.containerModal}>*/}
-            {/*        <div className={styles.containerImageModal}>*/}
-            {/*            <Image src={`/${dataCard.name}.png`}*/}
-            {/*                   alt={dataCard.name}*/}
-            {/*                   className={styles.imageModal}*/}
-            {/*                   fill={true}*/}
-            {/*            />*/}
-            {/*        </div>*/}
-            {/*        <div className={styles.containerModalDetails}>*/}
-            {/*            <div></div>*/}
-            {/*            <ButtonCard dataCard={dataCard}/>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</Modal>*/}
 
             <button onClick={ () => setModalActive(true)} className={styles.containerItem}>
                 <div className={styles.containerImage}>
                     <Image src={`/image/${dataCard.name}.png`}
                            alt={dataCard.name}
+                           loading={'lazy'}
                            className={styles.image}
                            fill={true}
                     />
                 </div>
                 <div className={styles.containerText}>
-                    <p className={styles.title}>{dataCard.name}</p>
+                    {dataCard.name.length > 13
+                        ?
+                        <p className={styles.title + ' ' + styles.longTitle}>{dataCard.name}</p>
+                        :
+                        <p className={styles.title}>{dataCard.name}</p>
+                    }
                     <p className={styles.description}>{renderDescription(dataCard.description)}</p>
                 </div>
             </button>

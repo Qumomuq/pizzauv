@@ -119,9 +119,11 @@
 }
 
 .buttonOrder {
+    position: absolute;
+    bottom: 20px;
     height: 40px;
     /*padding: 8px 20px;*/
-    width: 100%;
+    width: 93%;
     border-radius: 20px;
     font-size: 18px;
     background: var(--orange);

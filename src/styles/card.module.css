@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     height: 470px;
     width: 285px;
     border-radius: 15px;
@@ -52,6 +52,18 @@
     align-items: center;
 }
 
+.containerDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px
+}
+
 .footerModal {
     display: flex;
     justify-content: center;
@@ -67,6 +79,7 @@
 }
 
 .containerImage {
+    position: relative;
     height: 260px;
     width: 100%;
     background: var(--orangeWhite);
@@ -82,8 +95,8 @@
 .containerText {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: 140px;
     gap: 10px;
     padding: 0 10px;
@@ -94,6 +107,10 @@
     height: 30px;
     font-size: 30px;
     font-weight: 700;
+}
+
+.longTitle {
+    letter-spacing: -2px;
 }
 
 .description {
@@ -196,6 +213,9 @@
     .cost {
         font-size: 15px;
     }
+    .text {
+        font-size: 14px;
+    }
     .title {
         text-wrap: wrap;
         height: auto;
@@ -226,6 +246,9 @@
     }
     .cost {
         font-size: 15px;
+    }
+    .text {
+        font-size: 14px;
     }
     .title {
         text-wrap: wrap;

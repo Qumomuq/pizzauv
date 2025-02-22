@@ -13,6 +13,7 @@
     --indigoBadge: rgb(174,68,255);
 
     --gray: rgb(92, 99, 112);
+    --grayMask: rgb(117, 117, 117);
     --grayMedium: rgb(168, 180, 196);
     --grayLight: rgb(243, 243, 247);
 
@@ -22,6 +23,7 @@
     --black: rgb(0, 0, 0);
     --white: rgb(255, 255, 255);
 }
+
 
 /*@media (prefers-color-scheme: dark) {*/
 /*  :root {*/

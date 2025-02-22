@@ -45,11 +45,11 @@
     bottom: 0;
     padding: 10px 20px 20px 20px;
     width: 100%;
-    height: 160px;
+    height: 225px;
 }
 
 .textFooter {
-    height: 40px;
+    min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,11 +68,29 @@
     font-weight: 700;
 }
 
+.textSale {
+    position: relative;
+}
+
+.textSale:after {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:15px;
+    height:1px;
+    background: var(--orange);
+    display:block;
+    rotate: 152deg;
+ }
+
+
 .input {
+    font-family: __Nunito_6bb3b4;
     text-align: end;
     font-size: 21px;
     font-weight: 700;
-    width: 50%;
+    width: 52%;
 }
 .input:focus {
     font-size: 21px;

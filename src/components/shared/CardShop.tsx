@@ -33,13 +33,10 @@ const CardShop = ({data}) => {
                         />
                     </div>
                     <div className={styles.containerModalDetails}>
-                        <div>
-                            <div className={styles.cost}>
-                                <p>{data.card.name}</p>
-                            </div>
-                            <div>{renderDescription(data.card.descriptionFull)}</div>
+                        <div className={styles.containerDescription}>
+                            <p className={styles.cost}>{data.card.name}</p>
+                            <div className={styles.text}>{renderDescription(data.card.descriptionFull)}</div>
                         </div>
-
                         <div className={styles.footerModal}>
                             <div className={styles.cost}>
                                 <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
@@ -47,14 +44,6 @@ const CardShop = ({data}) => {
                             </div>
                             <ButtonCard dataCard={data.card}/>
                         </div>
-
-                        {/*<div className={styles.cost}>*/}
-                        {/*    <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />*/}
-                        {/*    <p>{data.card.price}</p>*/}
-                        {/*</div>*/}
-                        {/*<div className={styles.footerModal}>*/}
-                        {/*    <ButtonCard dataCard={data.card}/>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </Modal>

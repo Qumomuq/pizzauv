@@ -6,6 +6,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // images: {
+  //   loader: 'custom',
+  //   loaderFile: './my-loader.ts',
+  // },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
