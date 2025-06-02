@@ -1,0 +1,107 @@
+.container {
+    /*padding: 20px;*/
+}
+.containerInput {
+    display: flex;
+    flex-direction: row;
+}
+.title {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 7px 0px 0px;
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.radioLabel {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    /*color: var(--grayMask);*/
+}
+
+.radioInput[type='radio']:after {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    top: 4px;
+    left: 3px;
+    position: relative;
+    background-color: var(--grayMask);
+    content: '';
+    outline: 2px solid white;
+    box-shadow: 0 0 0px 3px var(--grayMask);
+}
+
+.radioInput[type='radio']:checked:after {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    top: 4px;
+    left: 3px;
+    position: relative;
+    background-color: var(--orange);
+    content: '';
+    outline: 2px solid white;
+    box-shadow: 0 0 0px 3px var(--orange);
+}
+
+/*.radioInput {*/
+/*    accent-color: orange; !* Изменяем цвет радио кнопок на оранжевый *!*/
+/*}*/
+
+.addressInputContainer {
+    overflow: hidden; /* Скрываем переполнение для анимации */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Плавный переход */
+    max-height: 0; /* Начальное состояние */
+    opacity: 0; /* Начальное состояние */
+}
+
+.addressInputContainer.show {
+    max-height: 100px; /* Максимальная высота для анимации */
+    opacity: 1; /* Полная видимость */
+}
+
+.addressInputContainer.hide {
+    max-height: 0; /* Скрытое состояние */
+    opacity: 0; /* Полная прозрачность */
+}
+
+.addressLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 7px 0px 0px;
+}
+
+.input, .input:focus{
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 96%;
+    transition: border-color 0.3s ease;
+}
+
+
+
+/*.input:focus {*/
+/*    border-color: orange; !* Изменяем цвет рамки при фокусе *!*/
+/*    outline: none; !* Убираем стандартный контур *!*/
+/*}*/

@@ -30,6 +30,7 @@ const CardShop = ({data}) => {
                                alt={data.card.name}
                                className={styles.imageModal}
                                fill={true}
+                               loading={"lazy"}
                         />
                     </div>
                     <div className={styles.containerModalDetails}>
@@ -49,10 +50,11 @@ const CardShop = ({data}) => {
             </Modal>
             {/*image*/}
             <button onClick={ () => setModalActive(true)} className={styles.image}>
-                <Image src={`/image/${data.card.name}.png`}
+                <Image src={`/minImage/${data.card.name}.png`}
                        alt={data.card.name}
                        className={styles.imageModal}
                        fill={true}
+                       loading={'eager'}
                 />
             </button>
             <div className={styles.container}>

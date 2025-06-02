@@ -3,7 +3,7 @@ import styles from "../../styles/button.module.css";
 import {sendOrderDetails} from "../../utils/fetcherMail.ts";
 import Modal from "@/components/ui/Modal";
 
-const ButtonCard = ({data, phone, sumOrder, sumProduct, address}) => {
+const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
     const [modalActive, setModalActive] = useState(false);
     const [loading, setLoading] = useState(true); // Состояние загрузки
     const [responseText, setResponseText] = useState('');
@@ -25,6 +25,10 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address}) => {
         Сумма заказа: ${sumOrder}.
         Способ получения: ${address.name}.
         ${address.address ? 'Адрес: ' + address.address : null}
+        
+        Время получения: ${time.name}.
+        ${time.time ? 'Время: ' + time.time : null}
+        
         Общее количество позиций: ${sumProduct}.
         Дата заказа: ${formattedDate}.
         ${data.product.map((product) =>`

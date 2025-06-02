@@ -19,6 +19,7 @@ const ADD_PRODUCT = (state, action) => {
     if (state.product.length !== 0) {
         let checkCard = false
         for (let i = 0; i < state.product.length; i++) {
+            console.log(action)
             if ( state.product[i].card.id === action.payload.card.id) {
                 const newPosts = state.product.map((card) => (
                     card.card.id === action.payload.card.id

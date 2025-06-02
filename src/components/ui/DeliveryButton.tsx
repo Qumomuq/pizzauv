@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from '@/styles/deliveryButton.module.css'; // Импортируем CSS-модуль
 
 const DeliveryButton = ({options, selectedOption, setSelectedOption, address, setAddress}) => {

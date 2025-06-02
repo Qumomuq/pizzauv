@@ -17,7 +17,8 @@
                     "image": "./",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                  {
@@ -28,8 +29,9 @@
                      "price": 600,
                      "image": "",
                      "properties": {
-                         "new": true,
-                         "hit": false
+                         "new": false,
+                         "hit": false,
+                         "pickupDiscount": true,
                      }
                  },
                 {
@@ -41,7 +43,8 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -52,8 +55,9 @@
                     "price": 660,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -65,7 +69,8 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -76,8 +81,9 @@
                     "price": 650,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -89,7 +95,8 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -100,8 +107,9 @@
                     "price": 720,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -113,7 +121,8 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -124,8 +133,9 @@
                     "price": 620,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -137,7 +147,8 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -148,8 +159,9 @@
                     "price": 600,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -160,8 +172,9 @@
                     "price": 660,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -172,8 +185,9 @@
                     "price": 690,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
                 {
@@ -184,8 +198,9 @@
                     "price": 655,
                     "image": "",
                     "properties": {
-                        "new": true,
-                        "hit": false
+                        "new": false,
+                        "hit": false,
+                        "pickupDiscount": true,
                     }
                 },
             ]
@@ -196,7 +211,7 @@
         "items":
             [
                 {
-                    "id": 0,
+                    "id": 15,
                     "name": "Кесадилья",
                     "description": "Нежное куриное филе, свежие огурчики и томаты, а также омлет тамаго и сыр моцарелла выполняется на фирменном соусе и со сливочным сыром моцарелла",
                     "descriptionFull": "Нежное куриное филе, свежие огурчики и томаты, а также омлет тамаго и сыр моцарелла выполняется на фирменном соусе и со сливочным сыром моцарелла",
@@ -204,11 +219,12 @@
                     "image": "",
                     "properties": {
                         "new": false,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": false,
                     }
                 },
                 {
-                    "id": 1,
+                    "id": 16,
                     "name": "Кесадилья",
                     "description": "Сочные обжаренные кусочки свинины, свежие томаты, хрустящие соленые огурчики и омлет тамаго в сочетании с фирменным и медово-горчичным соусом и сыром моцарелла",
                     "descriptionFull": "Сочные обжаренные кусочки свинины, свежие томаты, хрустящие соленые огурчики и омлет тамаго в сочетании с фирменным и медово-горчичным соусом и сыром моцарелла",
@@ -216,7 +232,8 @@
                     "image": "",
                     "properties": {
                         "new": true,
-                        "hit": false
+                        "hit": false,
+                        "pickupDiscount": false,
                     }
                 },
             ]

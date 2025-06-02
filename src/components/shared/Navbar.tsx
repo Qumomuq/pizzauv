@@ -11,6 +11,7 @@ import {RussianRuble} from "lucide-react";
 import { IMaskInput } from 'react-imask';
 import {Nunito} from "next/font/google";
 import DeliveryButton from "@/components/ui/DeliveryButton";
+import DeliveryTimeButton from "@/components/ui/DeliveryTimeButton";
 
 const nunito = Nunito({
     subsets: ['cyrillic'],
@@ -21,12 +22,18 @@ const nunito = Nunito({
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [phone, setPhone] = useState('');
-    const [selectedOption, setSelectedOption] = useState('0')
+    const [selectedOptionDelivery, setSelectedOptionDelivery] = useState('0')
+    const [selectedOptionTime, setSelectedOptionTime] = useState('0')
     const [address, setAddress] = useState('')
+    const [time, setTime] = useState('')
 
-    const options = [
+    const optionsDelivery = [
         {'value': '0', 'label': 'Самовывоз'},
         {'value': '1', 'label': 'Доставка'}
+    ]
+    const optionsTime = [
+        {'value': '0', 'label': 'Ближайшее'},
+        {'value': '1', 'label': 'Ко времени'}
     ]
 
     const data = useSelector(state => state.reducerProduct)
@@ -51,8 +58,30 @@ const Navbar = () => {
         setOpen(false);
     };
 
-    const footerHeight = selectedOption === '0' ? '255px' : '340px';
-    const footerAnim = selectedOption === '0' ? '0.35s' : '0.2s';
+
+    const resultFooterHeight = () => {
+        if (selectedOptionDelivery === '0' && selectedOptionTime === '0') {
+            return '350px'
+        } else if (selectedOptionDelivery === '0' || selectedOptionTime === '0') {
+            return '400px'
+        } else if (selectedOptionDelivery !== '0' && selectedOptionTime !== '0') {
+            return '540px'
+        }
+    }
+
+    const resultFooterAnim = () => {
+        if (selectedOptionDelivery === '0' && selectedOptionTime === '0') {
+            return '350px'
+        } else if (selectedOptionDelivery === '0' || selectedOptionTime === '0') {
+            return '400px'
+        } else if (selectedOptionDelivery !== '0' && selectedOptionTime !== '0') {
+            return '540px'
+        }
+    }
+    const footerHeight = resultFooterHeight()
+    // footerHeight = selectedOptionTime === '0' ? '400px' : '540px';
+    // const footerHeight = selectedOptionDelivery === '0' ? '255px' : '340px';
+    const footerAnim = selectedOptionDelivery === '0' ? '0.35s' : '0.2s';
     const drawerStyles = {
         mask: {
             backdropFilter: 'blur(10px)',
@@ -73,12 +102,22 @@ const Navbar = () => {
     function minusPercent(n, p) {
         return n - (n * (p/100));
     }
-    if(selectedOption === '0') {
-        sumOrder = minusPercent(sumOrder, 10)
+
+    if(selectedOptionDelivery === '0' && sumOrder !== 0 ) {
+        sumOrder = 0
+        data?.product.map((product) => {
+            if (product.card.properties.pickupDiscount === true) {
+                sumOrder += minusPercent(product.card.price * product.sumItems, 10)
+            } else {
+                sumOrder += product.card.price * product.sumItems
+            }
+        })
     } else {
         sumOrder = sumOrderSale
     }
-    const addressObj = {'value':selectedOption, 'name': options[selectedOption].label, 'address': address,}
+
+    const addressObj = {'value':selectedOptionDelivery, 'name': optionsDelivery[selectedOptionDelivery].label, 'address': address,}
+    const timeObj = {'value':selectedOptionTime, 'name': optionsTime[selectedOptionTime].label, 'time': time,}
 
     return (
         <div className={styles.container}>
@@ -101,7 +140,7 @@ const Navbar = () => {
                         <div className={styles.textFooter}>
                             <span>Сумма заказа</span>
                             <div className={styles.cost}>
-                                {selectedOption === '0' && sumOrder !== 0 ? <stricken className={styles.textSale}> {sumOrderSale} </stricken> : null}
+                                {sumOrder !== sumOrderSale ? <stricken className={styles.textSale}> {sumOrderSale} </stricken> : null}
                                 <RussianRuble size={20} strokeWidth={2.5} color="rgb(255, 105, 0)" />
                                 <span>{sumOrder}</span>
                             </div>
@@ -117,8 +156,9 @@ const Navbar = () => {
                                 required
                             />
                         </div>
-                        <DeliveryButton options={options} selectedOption={selectedOption} setSelectedOption={setSelectedOption} address={address} setAddress={setAddress} />
-                        <ButtonOrder data={data} phone={phone} sumOrder={sumOrder} sumProduct={sumProduct} address={addressObj}/>
+                        <DeliveryButton options={optionsDelivery} selectedOption={selectedOptionDelivery} setSelectedOption={setSelectedOptionDelivery} address={address} setAddress={setAddress} />
+                        <DeliveryTimeButton options={optionsTime} selectedOption={selectedOptionTime} setSelectedOption={setSelectedOptionTime} time={time} setTime={setTime} />
+                        <ButtonOrder data={data} phone={phone} sumOrder={sumOrder} sumProduct={sumProduct} address={addressObj} time={timeObj}/>
                     </div>
                 }>
                 <div className={nunito.className}>

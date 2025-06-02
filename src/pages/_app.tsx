@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import store, { persistor } from '../store/persistedStore.ts';
 import {Nunito} from "next/font/google";
 import {Metadata} from "next/types";
+import React from "react";
 
 const nunito = Nunito({
     subsets: ['cyrillic'],
@@ -17,7 +18,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
     title: "Пиццерия Южные Ворота",
-    description: "Пиццерия Южные Ворота. Мы находимся по адресу Ул.Тихая 111, м-н Южные Ворота",
+    description: "Вкусная пицца ждёт вас в пиццерии Южные Ворота. Мы находимся по адресу Ул.Тихая 111, м-н Южные Ворота",
 };
 
 export default function App({ Component, pageProps }: AppProps) {
