@@ -1,52 +1,39 @@
 import styles from '@/styles/deliveryTimeButton.module.css';
-import {useRef, useState} from "react"; // Импортируем CSS-модуль
+import { TimePicker } from 'antd';
+import dayjs, {Dayjs} from 'dayjs';
 
 
 const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, setTime}) => {
-    // const refHour = useRef(null);
-    // let select = document.getElementById("selectHour");
-    // var min = 12,
-    //     max = 100,
-    //     select = document.querySelector("#selectHour");
-    //
-    // for (var i = min; i<=max; i++){
-    //     var opt = document.createElement('option');
-    //     opt.value = i;
-    //     opt.innerHTML = i;
-    //     select.appendChild(opt);
-    // }
-
     const handleOptionChange = (event) => {
         const value = event.target.value;
         setSelectedOption(value);
-        setTime('14:00')
     };
 
-    // const [minute, setMinute] = useState(0);
-    // const [hour, setHour] = useState(0);
+    const format = 'HH:mm';
 
-    const handleHoursChange = (e) => {
-        console.log(e.target.value)
-        let hour = e.target.value;
-        // setHour(hour)
-
-        // hour = hour.padStart(2, '0')
-        const value = hour + time.slice(2)
-
-        setTime(value); // Только если адрес валиден или пуст
-        console.log(time)
-
+    const handleTimeChange = (eventTime:Dayjs) => {
+        let hour = eventTime.hour()
+        let minute = eventTime.minute()
+        let timeStr = hour.toString().padStart(2, '0') + ':' + minute.toString().padStart(2, '0');
+        setTime(timeStr)
     };
-    const handleMinuteChange = (e) => {
-        let minute = e.target.value
-        // setMinute(minute)
 
-        // minute = minute.padStart(2, '0')
-        const value = time.slice(0, -2) + minute
-
-        setTime(value); // Только если адрес валиден или пуст\
-        console.log(time)
-    };
+    let now = new Date();
+    let hourNow = now.getHours();
+    let hourMinute = now.getMinutes();
+    const disabledTime = () => ({
+        disabledHours: () => {
+            return Array.from({ length: 24 }, (_, i) => i).filter((hour) => hour < 9 || hour < hourNow + 1 || hour > 20);
+        },
+        disabledMinutes: (selectedHour: number) => {
+            let now = new Date();
+            let hourNow = now.getHours();
+            if (hourNow + 1 === selectedHour) {
+                return Array.from({ length: 59 }, (_, i) => i).filter((hour) => hour < hourMinute + 1);
+            }
+            return Array.from({ length: 59 }, (i) => i)
+        },
+    });
 
     return (
         <div className={styles.container}>
@@ -58,6 +45,7 @@ const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, s
                         <input
                             className={styles.radioInput}
                             type="radio"
+                            disabled={hourNow === 20 && option.value === '1'}
                             id={option.value}
                             name={option.label}
                             value={option.value}
@@ -71,40 +59,16 @@ const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, s
             <div className={`${styles.addressInputContainer} ${selectedOption === '1' ? styles.show : styles.hide}`}>
                 <label className={styles.addressLabel}>
                     <p>Время получения</p>
-                    <div className={styles.containerInput}>
-                        <select id={'selectHour'} onChange={handleHoursChange} className={styles.input} required>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                        </select>
-                        <select onChange={handleMinuteChange} className={styles.input} required>
-                            <option>01</option>
-                            <option>20</option>
-                            <option>40</option>
-                        </select>
-                        {/*<input*/}
-                        {/*    type="number"*/}
-                        {/*    value={hour}*/}
-                        {/*    onChange={(e) => handleHoursChange(e)}*/}
-                        {/*    className={styles.input}*/}
-                        {/*    min="12"*/}
-                        {/*    max="21"*/}
-                        {/*    maxLength={2}*/}
-                        {/*    // placeholder="Введите адрес"*/}
-                        {/*    required*/}
-                        {/*/>*/}
-                        {/*<input*/}
-                        {/*    type="number"*/}
-                        {/*    value={minute}*/}
-                        {/*    onChange={(e) => handleMinuteChange(e)}*/}
-                        {/*    className={styles.input}*/}
-                        {/*    min="0"*/}
-                        {/*    max="59"*/}
-                        {/*    maxLength={2}*/}
-                        {/*    // placeholder="Введите адрес"*/}
-                        {/*    required*/}
-                        {/*/>*/}
-                    </div>
+                    <TimePicker
+                        disabledTime={disabledTime}
+                        needConfirm={false}
+                        hideDisabledOptions
+                        showNow={false}
+                        defaultValue={dayjs('12:00', format)}
+                        format={format}
+                        value={dayjs(time, format)}
+                        onChange={(e) => handleTimeChange(e)}
+                    />
                 </label>
             </div>
         </div>

@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     height: 40px;
+    gap: 80px;
 }
 
 .radioLabel {
@@ -26,6 +27,7 @@
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
     /*color: var(--grayMask);*/
 }
 
@@ -96,8 +98,11 @@
     transition: border-color 0.3s ease;
 }
 
-
-
+@media screen and (max-width: 381px) {
+    .radioGroup {
+        gap: 0px;
+    }
+}
 /*.input:focus {*/
 /*    border-color: orange; !* Изменяем цвет рамки при фокусе *!*/
 /*    outline: none; !* Убираем стандартный контур *!*/

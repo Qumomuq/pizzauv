@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import product from "../../../env";
 import Link from "next/link";
 import styles from "@/styles/navbar.module.css";
-import {ConfigProvider, Drawer} from "antd";
+import {Drawer} from "antd";
 import ButtonShop from "../ui/ButtonShop";
 import CardShop from "./CardShop";
 import {useSelector} from "react-redux";
@@ -25,7 +25,8 @@ const Navbar = () => {
     const [selectedOptionDelivery, setSelectedOptionDelivery] = useState('0')
     const [selectedOptionTime, setSelectedOptionTime] = useState('0')
     const [address, setAddress] = useState('')
-    const [time, setTime] = useState('')
+    const [time, setTime] = useState('20:00')
+    // const [time, setTime] = useState<Dayjs | null>()
 
     const optionsDelivery = [
         {'value': '0', 'label': 'Самовывоз'},
@@ -117,7 +118,7 @@ const Navbar = () => {
     }
 
     const addressObj = {'value':selectedOptionDelivery, 'name': optionsDelivery[selectedOptionDelivery].label, 'address': address,}
-    const timeObj = {'value':selectedOptionTime, 'name': optionsTime[selectedOptionTime].label, 'time': time,}
+    const timeObj = {'value':selectedOptionTime, 'name': optionsTime[selectedOptionTime].label, 'time': selectedOptionTime === '1' ? time : null,}
 
     return (
         <div className={styles.container}>

@@ -6,13 +6,6 @@ const DeliveryButton = ({options, selectedOption, setSelectedOption, address, se
         setSelectedOption(value);
     };
 
-    // const handleAddressChange = (event) => {
-    //     const value = event.target.value;
-    //     setAddress(value);
-    // };
-
-    // const [address, setAddress] = useState('');
-
     // Регулярное выражение для валидации адреса (можно изменить по необходимости)
     const addressRegex = /^[a-zA-Zа-яА-ЯЁё0-9\s,.-]+$/;
 

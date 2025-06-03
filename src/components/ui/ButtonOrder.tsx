@@ -7,6 +7,7 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
     const [modalActive, setModalActive] = useState(false);
     const [loading, setLoading] = useState(true); // Состояние загрузки
     const [responseText, setResponseText] = useState('');
+    console.log(time)
     const placingAnOrder = () => {
         const date = new Date();
         const formattedDate = date.toLocaleString('ru-RU', {
