@@ -25,8 +25,7 @@ const Navbar = () => {
     const [selectedOptionDelivery, setSelectedOptionDelivery] = useState('0')
     const [selectedOptionTime, setSelectedOptionTime] = useState('0')
     const [address, setAddress] = useState('')
-    const [time, setTime] = useState('20:00')
-    // const [time, setTime] = useState<Dayjs | null>()
+    const [time, setTime] = useState<string|null>()
 
     const optionsDelivery = [
         {'value': '0', 'label': 'Самовывоз'},
@@ -62,27 +61,18 @@ const Navbar = () => {
 
     const resultFooterHeight = () => {
         if (selectedOptionDelivery === '0' && selectedOptionTime === '0') {
-            return '350px'
-        } else if (selectedOptionDelivery === '0' || selectedOptionTime === '0') {
-            return '400px'
-        } else if (selectedOptionDelivery !== '0' && selectedOptionTime !== '0') {
-            return '540px'
+            return '330px'
+        } else if (selectedOptionDelivery === '1' && selectedOptionTime === '1') {
+            return '452px'
+        } else if (selectedOptionDelivery === '0' || selectedOptionTime === '1') {
+            return '370px'
+        } else if (selectedOptionDelivery === '1' || selectedOptionTime === '0') {
+            return '412px'
         }
     }
 
-    const resultFooterAnim = () => {
-        if (selectedOptionDelivery === '0' && selectedOptionTime === '0') {
-            return '350px'
-        } else if (selectedOptionDelivery === '0' || selectedOptionTime === '0') {
-            return '400px'
-        } else if (selectedOptionDelivery !== '0' && selectedOptionTime !== '0') {
-            return '540px'
-        }
-    }
     const footerHeight = resultFooterHeight()
-    // footerHeight = selectedOptionTime === '0' ? '400px' : '540px';
-    // const footerHeight = selectedOptionDelivery === '0' ? '255px' : '340px';
-    const footerAnim = selectedOptionDelivery === '0' ? '0.35s' : '0.2s';
+    const footerAnim = '0.3s'
     const drawerStyles = {
         mask: {
             backdropFilter: 'blur(10px)',

@@ -1,6 +1,7 @@
 import styles from '@/styles/deliveryTimeButton.module.css';
 import { TimePicker } from 'antd';
-import dayjs, {Dayjs} from 'dayjs';
+import {Dayjs} from 'dayjs';
+import {useState} from "react";
 
 
 const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, setTime}) => {
@@ -9,13 +10,18 @@ const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, s
         setSelectedOption(value);
     };
 
+    const [timeButton, setTimeButton] = useState<Dayjs|null>()
     const format = 'HH:mm';
 
-    const handleTimeChange = (eventTime:Dayjs) => {
-        let hour = eventTime.hour()
-        let minute = eventTime.minute()
-        let timeStr = hour.toString().padStart(2, '0') + ':' + minute.toString().padStart(2, '0');
-        setTime(timeStr)
+    const handleTimeChange = (eventTime:Dayjs|null) => {
+        if (eventTime !== null) {
+            let hour = eventTime.hour()
+            let minute = eventTime.minute()
+            let timeStr = hour.toString().padStart(2, '0') + ':' + minute.toString().padStart(2, '0');
+            setTime(timeStr)
+        } else setTime(null)
+
+        setTimeButton(eventTime)
     };
 
     let now = new Date();
@@ -64,9 +70,9 @@ const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, s
                         needConfirm={false}
                         hideDisabledOptions
                         showNow={false}
-                        defaultValue={dayjs('12:00', format)}
                         format={format}
-                        value={dayjs(time, format)}
+                        // value={dayjs(time, format)}
+                        value={timeButton}
                         onChange={(e) => handleTimeChange(e)}
                     />
                 </label>

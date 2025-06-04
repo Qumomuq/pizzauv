@@ -7,7 +7,7 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
     const [modalActive, setModalActive] = useState(false);
     const [loading, setLoading] = useState(true); // Состояние загрузки
     const [responseText, setResponseText] = useState('');
-    console.log(time)
+
     const placingAnOrder = () => {
         const date = new Date();
         const formattedDate = date.toLocaleString('ru-RU', {
@@ -25,11 +25,9 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
         Номер телефона: ${phone}. 
         Сумма заказа: ${sumOrder}.
         Способ получения: ${address.name}.
-        ${address.address ? 'Адрес: ' + address.address : null}
-        
+        ${address.address ? 'Адрес: ' + address.address : ''}
         Время получения: ${time.name}.
-        ${time.time ? 'Время: ' + time.time : null}
-        
+        ${time.value === '1' ? 'Подготовить к ' + time.time : ''}
         Общее количество позиций: ${sumProduct}.
         Дата заказа: ${formattedDate}.
         ${data.product.map((product) =>`
@@ -49,7 +47,8 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
     }
     let textButton = ''
     let disabled = true
-    if (address.value === '0') {
+
+    if (address.value === '0' && time.value === '0') {
         if (phone.length === 18) {
             disabled = false
             textButton = 'Заказать'
@@ -58,13 +57,38 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
             textButton = 'Введите номер телефона'
             disabled = true
         }
-    } else if(address.value === '1') {
+    } else if(address.value === '1' && time.value === '0') {
         if (phone.length === 18 && address.address.length !== 0) {
             textButton = 'Заказать'
             disabled = false
         } else if(phone.length !== 18) {
             disabled = true
             textButton = 'Введите номер телефона'
+        } else if (address.address.length === 0) {
+            disabled = true
+            textButton = 'Введите адрес доставки'
+        }
+    } else if(address.value === '0' && time.value === '1') {
+        if (phone.length === 18 && typeof time.time === "string") {
+            textButton = 'Заказать'
+            disabled = false
+        } else if(phone.length !== 18) {
+            disabled = true
+            textButton = 'Введите номер телефона'
+        } else if (typeof time.time !== "string") {
+            disabled = true
+            textButton = 'Введите время получения'
+        }
+    } else if(address.value === '1' && time.value === '1') {
+        if (phone.length === 18 && address.address.length !== 0 && typeof time.time === "string") {
+            textButton = 'Заказать'
+            disabled = false
+        } else if(phone.length !== 18) {
+            disabled = true
+            textButton = 'Введите номер телефона'
+        } else if (typeof time.time !== "string") {
+            disabled = true
+            textButton = 'Введите время получения'
         } else if (address.address.length === 0) {
             disabled = true
             textButton = 'Введите адрес доставки'
