@@ -98,6 +98,10 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
         disabled = true
         textButton = 'Доставка от 600 рублей'
     }
+    if( sumOrder <= 0 ) {
+        disabled = true
+        textButton = 'Корзина пуста'
+    }
 
     return (
         <>
