@@ -94,6 +94,10 @@ const ButtonCard = ({data, phone, sumOrder, sumProduct, address, time}) => {
             textButton = 'Введите адрес доставки'
         }
     }
+    if( address.value === '1' && sumOrder < 600 ) {
+        disabled = true
+        textButton = 'Доставка от 600 рублей'
+    }
 
     return (
         <>

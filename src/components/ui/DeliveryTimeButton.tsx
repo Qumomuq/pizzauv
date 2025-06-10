@@ -66,6 +66,7 @@ const DeliveryTimeButton = ({options, selectedOption, setSelectedOption, time, s
                 <label className={styles.addressLabel}>
                     <p>Время получения</p>
                     <TimePicker
+                        placeholder={'Нажмите'}
                         disabledTime={disabledTime}
                         needConfirm={false}
                         hideDisabledOptions
