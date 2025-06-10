@@ -10,6 +10,14 @@ const nextConfig = {
   //   loader: 'custom',
   //   loaderFile: './my-loader.ts',
   // },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*', // Match any path that isn't explicitly defined
+        destination: '/', // Redirect to the homepage
+      },
+    ];
+  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
