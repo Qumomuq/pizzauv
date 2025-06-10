@@ -50,7 +50,7 @@ const CardShop = ({data}) => {
             </Modal>
             {/*image*/}
             <button onClick={ () => setModalActive(true)} className={styles.image}>
-                <Image src={`/minImage/${data.card.name}.png`}
+                <Image src={`/image/minImage/${data.card.name}.png`}
                        alt={data.card.name}
                        className={styles.imageModal}
                        fill={true}

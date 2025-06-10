@@ -106,15 +106,15 @@ button {
 }
 
 /*antd style*/
-:where(.css-dev-only-do-not-override-mc1tut).ant-picker-outlined:focus, :where(.css-dev-only-do-not-override-mc1tut).ant-picker-outlined:focus-within {
+.ant-picker-outlined:focus, .ant-picker-outlined:focus-within {
     border-color: var(--orange);
     box-shadow: 0 0 0 2px rgba(255, 93, 5, 0.1);
 }
-:where(.css-dev-only-do-not-override-mc1tut).ant-picker-outlined:hover {
+.ant-picker-outlined:hover {
     border-color: var(--orange);
     background-color: var(--white);
 }
-:where(.css-dev-only-do-not-override-mc1tut).ant-picker-dropdown .ant-picker-time-panel-column >li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+.ant-picker-dropdown .ant-picker-time-panel-column >li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
     background: var(--orangeWhite);
 }
 /*.ant-picker-time-panel-cell-inner {*/

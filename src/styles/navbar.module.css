@@ -86,7 +86,7 @@
 
 
 .input {
-    font-family: __Nunito_6bb3b4;
+    font-family: __Nunito_8cc089;//брать из билда// Shift+f "__Nunito" и заменять цифры
     text-align: end;
     font-size: 21px;
     font-weight: 700;

@@ -45,7 +45,7 @@ const Card = ({ dataCard }) => {
 
             <button onClick={ () => setModalActive(true)} className={styles.containerItem}>
                 <div className={styles.containerImage}>
-                    <Image src={`/minImage/${dataCard.name}.png`}
+                    <Image src={`/image/minImage/${dataCard.name}.png`}
                            alt={dataCard.name}
                            loading={'eager'}
                            className={styles.image}
